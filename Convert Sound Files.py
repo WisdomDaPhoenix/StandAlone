@@ -12,11 +12,21 @@
 import os
 import pydub
 import glob
+
+
 #---------------------------------------------------------------------------------------------------------
 # CONVERT SINGLE FILE AND PLAY
 #---------------------------------------------------------------------------------------------------------
+#FILE 1:
 greatness_wav_file = os.path.splitext('J.Wiley - Greatness.mp3')[0] + '.wav'
 sound = pydub.AudioSegment.from_mp3('J.Wiley - Greatness.mp3')
+sound.export(greatness_wav_file, format="wav")
+print("Converted")
+from playsound import playsound
+playsound(greatness_wav_file)
+# FILE 2:
+greatness_wav_file = os.path.splitext('Thank_You_Pentatonix.mp3')[0] + '.wav'
+sound = pydub.AudioSegment.from_mp3('Thank_You_Pentatonix.mp3')
 sound.export(greatness_wav_file, format="wav")
 print("Converted")
 from playsound import playsound
@@ -38,6 +48,9 @@ for wav_file in wav_files:
     sound = pydub.AudioSegment.from_wav(wav_file)
     sound.export(mp3_file, format="mp3")
 print("Conversion complete")
+
+
+
 
 
 
