@@ -32,6 +32,13 @@ print("Converted")
 from playsound import playsound
 playsound(greatness_wav_file)
 
+# FILE 3:
+greatness_wav_file = os.path.splitext('Happy Now.mp3')[0] + '.wav'
+sound = pydub.AudioSegment.from_mp3('Happy Now.mp3')
+sound.export(greatness_wav_file, format="wav")
+print("Converted")
+from playsound import playsound
+playsound(greatness_wav_file)
 #----------------------------------------------------------------------------------------------------------
 
 # Code begins here
